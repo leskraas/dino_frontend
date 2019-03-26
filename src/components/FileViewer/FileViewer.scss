@@ -1,0 +1,49 @@
+.file-viewer {
+  height: 100%;
+  //   background: rgb(35, 35, 35);
+  background: rgb(30, 30, 30);
+  //   box-shadow: 3px 0px 0px rgb(45, 47, 56);
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  //   position: relative;
+  //   top: 0;
+  left: 0;
+  width: 70%;
+  max-width: 200px;
+  z-index: 200;
+  // transform: translateX(-100%);
+  // transition: transform 0.3s ease-out;
+}
+
+.file-viewer ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  //   justify-content: start;
+}
+.file-viewer li {
+  margin: 1rem 0;
+}
+
+.file-viewer a {
+  color: rgb(206, 206, 206);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.file-viewer a:hover,
+.file-viewer a:active {
+  color: #c4a185;
+}
+
+.file_list li {
+  margin: 0.25rem 0;
+}
+
+.file_list a {
+  color: rgb(206, 206, 206);
+  text-decoration: none;
+  font-size: 0.9rem;
+}

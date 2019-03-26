@@ -1,25 +1,52 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { Component } from "react";
+import "./App.css";
+import { connect, sendMsg } from "./api";
+import Toolbar from "./components/Toolbar/Toolbar";
+import SideDrawer from "./components/SideDrawer/SideDrawer";
+import Monaco from "./components/Monaco/Monaco";
+import Backdrop from "./components/Backdrop/Backdrop";
+import FileViewer from "./components/FileViewer/FileViewer";
 
 class App extends Component {
+  state = {
+    SideDrawerOpen: false
+  };
+  constructor(props) {
+    super(props);
+    connect();
+  }
+
+  send() {
+    console.log("hello");
+    sendMsg("hello");
+  }
+
+  drawerToggleClickHandler = () => {
+    this.setState(prevState => {
+      return { SideDrawerOpen: !prevState.SideDrawerOpen };
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({ SideDrawerOpen: false });
+  };
+
   render() {
+    let backdrop;
+    if (this.state.SideDrawerOpen) {
+      backdrop = <Backdrop click={this.backdropClickHandler} />;
+    }
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.SideDrawerOpen} />
+        {backdrop}
+        <main style={{ marginTop: "64px" }}>
+          {/* <button onClick={this.send}>Hit</button> */}
+          <FileViewer />
+          <Monaco />
+        </main>
       </div>
     );
   }
