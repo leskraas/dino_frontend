@@ -9,11 +9,23 @@
   //   top: 0;
   left: 0;
   width: 70%;
-  max-width: 200px;
   z-index: 200;
+  max-width: 170px;
   // transform: translateX(-100%);
   // transition: transform 0.3s ease-out;
 }
+// .file-viewer {
+//   // display: flex;
+//   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+//   z-index: 200;
+//   flex: 1;
+//   min-width: 170px;
+//   max-width: 170px;
+//   flex-basis: auto; /* default value */
+//   flex-grow: 1;
+
+//   background: rgb(30, 30, 30);
+// }
 
 .file-viewer ul {
   height: 100%;
@@ -24,7 +36,7 @@
   //   justify-content: start;
 }
 .file-viewer li {
-  margin: 1rem 0;
+  margin: 1rem -1.5rem;
 }
 
 .file-viewer a {
@@ -39,7 +51,7 @@
 }
 
 .file_list li {
-  margin: 0.25rem 0;
+  margin: 0.25rem -1rem;
 }
 
 .file_list a {

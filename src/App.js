@@ -7,20 +7,28 @@ import SideDrawer from "./components/SideDrawer/SideDrawer";
 import Monaco from "./components/Monaco/Monaco";
 import Backdrop from "./components/Backdrop/Backdrop";
 import FileViewer from "./components/FileViewer/FileViewer";
+import SvgViewer from "./components/SvgViewer/SvgViewer";
 
 class App extends Component {
   state = {
-    SideDrawerOpen: false
+    SideDrawerOpen: false,
+    Code: "",
+    Svg: "<svg />"
   };
-  constructor(props) {
-    super(props);
-    connect();
-  }
+  // constructor(props) {
+  //   super(props);
+  //   // connect();
+  // }
 
-  send() {
-    console.log("hello");
-    sendMsg("hello");
+  componentDidMount() {
+    connect(svg => {
+      console.log("SVG: ", svg);
+      this.setState({ Svg: svg });
+    });
   }
+  veifyHandler = () => {
+    sendMsg("verify", this.state.Code);
+  };
 
   drawerToggleClickHandler = () => {
     this.setState(prevState => {
@@ -32,6 +40,15 @@ class App extends Component {
     this.setState({ SideDrawerOpen: false });
   };
 
+  saveCode = code => {
+    this.setState({ Code: code });
+    console.log(this.state.Code);
+  };
+
+  dataFromServer = data => {
+    console.log(data);
+  };
+
   render() {
     let backdrop;
     if (this.state.SideDrawerOpen) {
@@ -39,13 +56,19 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-        <SideDrawer show={this.state.SideDrawerOpen} />
-        {backdrop}
-        <main style={{ marginTop: "64px" }}>
+        <div className="container_toolbar">
+          <Toolbar
+            drawerClickHandler={this.drawerToggleClickHandler}
+            verifyClickHandler={this.veifyHandler}
+          />
+          <SideDrawer show={this.state.SideDrawerOpen} />
+          {backdrop}
+        </div>
+        <main className="container_main">
           {/* <button onClick={this.send}>Hit</button> */}
           <FileViewer />
-          <Monaco />
+          <Monaco saveCode={this.saveCode} />
+          <SvgViewer svgFile={this.state.Svg} />
         </main>
       </div>
     );

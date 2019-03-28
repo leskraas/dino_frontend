@@ -14,7 +14,9 @@ const toolbar = props => (
         <a href="/">Dino</a>{" "}
       </div>
       <div className="spacer" />
-      <div className="toolbar_verify-button">Verify</div>
+      <div className="toolbar_verify-button">
+        <button onClick={props.verifyClickHandler}>Verify</button>
+      </div>
       <div className="toolbar_upload-button">Upload</div>
       <div className="spacer" />
 
