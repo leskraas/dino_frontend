@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "i": "^0.3.6",
     "node-sass": "^4.11.0",
+    "npm": "^6.9.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-monaco-editor": "^0.25.1",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "react-scroll-box": "^0.3.5"
   },
   "scripts": {
     "start": "react-app-rewired start",

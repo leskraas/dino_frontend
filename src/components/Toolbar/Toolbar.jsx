@@ -1,7 +1,12 @@
 import React from "react";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 
 import "./Toolbar.scss";
 import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
+
+library.add(fas);
 
 const toolbar = props => (
   <header className="toolbar">
@@ -15,9 +20,15 @@ const toolbar = props => (
       </div>
       <div className="spacer" />
       <div className="toolbar_verify-button">
-        <button onClick={props.verifyClickHandler}>Verify</button>
+        <button className="btn" onClick={props.verifyClickHandler}>
+          <FontAwesomeIcon icon="check" />
+        </button>
       </div>
-      <div className="toolbar_upload-button">Upload</div>
+      <div className="toolbar_upload-button">
+        <button className="btn">
+          <FontAwesomeIcon icon="arrow-right" />
+        </button>
+      </div>
       <div className="spacer" />
 
       <div className="toolbar_navigation-items">

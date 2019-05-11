@@ -3,12 +3,26 @@
 //   flex-grow: 1;
 // }
 .svg_viewer {
-  position: fixed;
+  //   position: fixed;
   height: 100%;
-  width: 450px;
+  width: 100%;
+  margin: 0;
   //   top: 0;
-  right: 0;
-  //   background: rgba(255, 0, 0, 0.3);
-  z-index: 0;
+  //   right: 0;
+  background: rgb(206, 206, 206);
+
   //   left: 200px;
 }
+
+// .svg_viewer svg {
+//   fill: blue;
+// }
+
+// .svg_viewer svg g:nth-child(7) {
+//   stroke: green;
+// }
+
+// // #root > div > main > div.box_debug > div.box_svgViewer > div > svg > line:nth-child(8)
+// // #root > div > main > div.box_debug > div.box_svgViewer > div > svg > g:nth-child(5)
+// // #root > div > main > div.box_debug > div.box_svgViewer > div > svg > g:nth-child(2)
+// #root > div > main > div.box_debug > div.box_svgViewer > div > svg

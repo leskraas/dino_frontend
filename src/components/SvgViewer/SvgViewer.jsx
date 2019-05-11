@@ -3,16 +3,17 @@ import React from "react";
 import "./SvgViewer.scss";
 
 const svgViewer = props => {
-  //   let svg = new DOMParser().parseFromString(<svg />, "text/xml");
-  //   if (props.svgFile !== "") {
-  //     svg = new DOMParser().parseFromString(props.svgFile, "text/xml");
-  //   }
+  // var parser = new DOMParser();
+  // var doc = parser.parseFromString(props.svgFile, "image/svg+xml");
+  // console.log("000000000");
+  // console.log(doc.lastChild);
   return (
     <div
       className="svg_viewer"
       dangerouslySetInnerHTML={{ __html: props.svgFile }}
     >
-      {/* <img src={require(process.env.PUBLIC_URL + "backend/files/out.svg")} /> */}
+      {/* {doc.lastChild} */}
+      {/* <img src={doc.lastChild} alt={"svg"} /> */}
     </div>
   );
 };

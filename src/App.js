@@ -65,10 +65,18 @@ class App extends Component {
           {backdrop}
         </div>
         <main className="container_main">
-          {/* <button onClick={this.send}>Hit</button> */}
-          <FileViewer />
-          <Monaco saveCode={this.saveCode} />
-          <SvgViewer svgFile={this.state.Svg} />
+          <div className="box_fileViewer">
+            <FileViewer />
+          </div>
+          <div className="box_monaco">
+            <Monaco saveCode={this.saveCode} />
+          </div>
+          <div className="box_debug">
+            <div className="box_svgViewer">
+              <SvgViewer svgFile={this.state.Svg} />
+            </div>
+            <div className="box_console">placehodler</div>
+          </div>
         </main>
       </div>
     );

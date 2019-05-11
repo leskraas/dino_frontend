@@ -11,11 +11,11 @@ let connect = cb => {
   socket.onmessage = msg => {
     console.log("====================================");
     let temp = JSON.parse(msg.data);
-    if (temp.data.type === "verify") {
+    if (temp.data.type === "svg") {
+      console.log("verify");
       cb(temp.data.content);
     }
     // console.log(temp.type);
-    // console.log(temp.body);
     console.log(temp.data.type);
     // console.log(temp.data.content);
     console.log("====================================");
@@ -30,13 +30,13 @@ let connect = cb => {
   };
 };
 
-let sendMsg = (type, msg) => {
+let sendMsg = (type, data) => {
   // console.log("sending msg: ", msg);
   // let test = '{ "type":"John" , "content":"Doe" }';
-  let test = { type: type, content: msg };
-  test = JSON.stringify(test);
-  console.log("sending msg: ", test);
-  socket.send(test);
+  let msg = { type: type, content: data };
+  msg = JSON.stringify(msg);
+  console.log("sending msg: ", msg);
+  socket.send(msg);
 };
 
 export { connect, sendMsg };

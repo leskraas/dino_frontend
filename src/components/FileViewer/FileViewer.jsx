@@ -3,12 +3,13 @@ import React from "react";
 import "./FileViewer.scss";
 
 const fileViewer = props => {
-  let drawerClasses = "file-viewer";
+  // let drawerClasses = "file-viewer";
   //   if (props.show) {
   //     drawerClasses = "file-viewer open";
   //   }
   return (
-    <nav className={drawerClasses}>
+    // <nav className={drawerClasses}>
+    <nav className={"file-viewer"}>
       <ul>
         <li>
           <a href="/">Design</a>

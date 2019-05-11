@@ -1,18 +1,9 @@
 .file-viewer {
-  height: 100%;
-  //   background: rgb(35, 35, 35);
   background: rgb(30, 30, 30);
-  //   box-shadow: 3px 0px 0px rgb(45, 47, 56);
   box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
-  position: fixed;
-  //   position: relative;
-  //   top: 0;
-  left: 0;
-  width: 70%;
+  height: 100%;
+  width: 100%;
   z-index: 200;
-  max-width: 170px;
-  // transform: translateX(-100%);
-  // transition: transform 0.3s ease-out;
 }
 // .file-viewer {
 //   // display: flex;
@@ -28,15 +19,26 @@
 // }
 
 .file-viewer ul {
-  height: 100%;
-  list-style: none;
-  display: flex;
-  text-align: left;
-  flex-direction: column;
-  //   justify-content: start;
+  // height: 100%;
+  // list-style: none;
+  // // list-style-type: none;
+  // // display: flex;
+  // // text-align: left;
+  // // flex-direction: column;
+  // // flex-wrap: wrap;
+  // display: inline-block;
+  // // padding: 5px;
+  // // margin: -10px 0;
+  // justify-content: start;
+  // background-color: yellow;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 .file-viewer li {
-  margin: 1rem -1.5rem;
+  // margin: 1rem -1.5rem;
+  display: inline-block;
+  padding: 1rem 1rem;
 }
 
 .file-viewer a {
@@ -51,7 +53,9 @@
 }
 
 .file_list li {
-  margin: 0.25rem -1rem;
+  // margin: 0.25rem -1rem;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
 }
 
 .file_list a {
